@@ -4,6 +4,7 @@
     "target": "es5",
     "moduleResolution": "node",
     "declaration": true,
+    "listFiles": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": false
