@@ -3,7 +3,6 @@
     "module": "commonjs",
     "target": "es5",
     "moduleResolution": "node",
-    "outDir": "build",
     "sourceMap": true,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": false

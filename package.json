@@ -8,7 +8,7 @@
   "scripts": {
     "npmignore": "npm pack . > /dev/null && tar -tvf *.tgz && rm *.tgz",
     "typings": "typings install",
-    "build": "rm -rf build && tsc",
+    "build": "rm -rf build && tsc --outDir build",
     "prepublish": "npm run typings && npm run test && npm run build",
     "test": "npm run tslint && npm run mocha",
     "tslint": "tslint $(find src test -name '*.ts')",
