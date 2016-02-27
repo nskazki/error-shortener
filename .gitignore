@@ -15,3 +15,8 @@ local/
 .idea/
 .vscode/
 !.vscode/launch.json
+
+src/*.js*
+src/*.d.ts
+test/*.js*
+test/*.d.ts
