@@ -1,0 +1,9 @@
+{
+  "search.excludeFolders": [
+    ".git",
+    ".vscode",
+    "build",
+    "node_modules",
+    "typings"
+  ]
+}

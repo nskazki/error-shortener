@@ -1,19 +1,17 @@
 {
-  "version": "0.1.0",
-  "command": "npm",
-  "isShellCommand": true,
-  "showOutput": "always",
-  "args": [ "run" ],
-  "isWatching": false,
-  "tasks": [
-    {
-      "taskName": "build",
-      "isBuildCommand": true,
-      "problemMatcher": "$tsc"
-    },
-    {
-      "taskName": "test",
-      "isTestCommand": true
-    }
-  ]
+    "version": "0.1.0",
+    "command": "npm",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "args": [ "run" ],
+    "tasks": [
+        {
+            "taskName": "build",
+            "isBuildCommand": true
+        },
+        {
+            "taskName": "test",
+            "isTestCommand": true
+        }
+    ]
 }
