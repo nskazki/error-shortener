@@ -8,15 +8,15 @@
   "scripts": {
     "npmignore": "npm pack . > /dev/null && tar -tvf *.tgz && rm *.tgz",
     "typings": "typings install",
-    "build": "rm -rf build && tsc --outDir build",
+    "build": "rm -rf build && tsc",
     "prepublish": "npm run typings && npm run test && npm run build",
     "test": "npm run tslint && npm run mocha",
     "tslint": "tslint $(find src test -name '*.ts')",
-    "mocha": "mocha test"
+    "mocha": "mocha"
   },
   "dependencies": {},
   "devDependencies": {
-    "espower-typescript": "^5.0.0",
+    "espower-typescript": "^5.0.1",
     "mocha": "^2.4.5",
     "power-assert": "^1.2.0",
     "ts-node": "^0.5.5",
