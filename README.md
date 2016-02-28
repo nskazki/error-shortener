@@ -16,9 +16,11 @@ vscode mode:
 
 vscode editor:
  * goto\add tab: ctrl+(1|2|3)
- * goto line: ctrl+g
  * add tab: ctrl+\
- * close tab: ctrl+w
+ * del tab: ctrl+w
+ * goto line: ctrl+g
+ * goto defn: f12
+ * goto symb: ctrl+shift+o
  * move line: ctrl+shift+(up|down)
  * select next: ctrl+d
  * insert currsor up\down: shift+alt+(up|down)
@@ -28,9 +30,13 @@ vscode editor:
  * show tips: alt+space
 
 vscode other:
- * reload vscode: alt+f5
+ * navigate pallet: ctrl+tab
  * command pallet: ctrl+shift+p
- * files pallet: ctrl+e
+ * files pallet: ctrl+e | ctrl+p
+ * warnings pallet: ctrl+shift+m
+ * show\hide output: ctrl+shift+h
+ * show\hide sidebar: ctrl+b
+ * reload vscode: alt+f5
 
 vscode ext:
  * tslint
