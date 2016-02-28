@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug src",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/index.ts",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "runtimeArgs": [],
+            "env": {},
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/build"
+        },
+        {
+            "name": "debug test",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
+            "args": [ "build/test" ],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "runtimeArgs": [],
+            "env": {},
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/build"
+        },
+        {
+            "name": "Attach",
+            "type": "node",
+            "request": "attach",
+            "port": 5858,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": null
+        }
+    ]
+}
