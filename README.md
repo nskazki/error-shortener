@@ -6,7 +6,7 @@ vscode tasks:
  * run build: ctrl+shift+b
  * run tests: ctrl+shift+t
  * stop tasks: shift+alt+s
- * show tasks: ctrl+shift+r
+ * tasks pallet : ctrl+shift+r
 
 vscode mode:
  * explorer: ctrl+shift+e
@@ -33,6 +33,7 @@ vscode other:
  * navigate pallet: ctrl+tab
  * command pallet: ctrl+shift+p
  * files pallet: ctrl+e | ctrl+p
+ * wallaby pallet: ctrl+shift+=
  * warnings pallet: ctrl+shift+m
  * show\hide output: ctrl+shift+h
  * show\hide sidebar: ctrl+b
