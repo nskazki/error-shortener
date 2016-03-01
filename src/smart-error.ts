@@ -12,7 +12,7 @@ export interface IErrorLike {
   name?: string
 }
 
-export interface IElement {
+interface IElement {
   line: string,
   index: number
 }
@@ -25,16 +25,16 @@ export function isErrorLike(arg: any): arg is IErrorLike {
     && (isUndefined(arg.name) || isString(arg.name))
 }
 
-export function fmtError(rawError: any): string {
+export function fmtError(rawError: IErrorLike): string {
   return fmtShortError(rawError)
 }
 
-export function fmtShortError(rawError: any): string {
+export function fmtShortError(rawError: IErrorLike): string {
   const sErr = new SmartError(rawError)
   return sErr.toShortString()
 }
 
-export function fmtLongError(rawError: any): string {
+export function fmtLongError(rawError: IErrorLike): string {
   const sErr = new SmartError(rawError)
   return sErr.toLongString()
 }
@@ -48,7 +48,7 @@ export default class SmartError implements IErrorLike {
   private _frameRE: RegExp = /^(From previous event:$)|(-{10,}$)/
   private _errorNameRE: RegExp = /(\w+)(($)|(:.*$))/
 
-  constructor(rawError: any) {
+  constructor(rawError: IErrorLike) {
     if (!isErrorLike(rawError))
       throw new Error(`SmartError#new: first arg must be a IErrorLike!\
         \n\t arg type: ${typeof rawError}\
@@ -125,10 +125,7 @@ export default class SmartError implements IErrorLike {
   private get _stackLines(): string[] {
     const resultLines = this._isClassicError
       ? this._stackElements.map(({ line }) => line)
-      : this._rawStackLines
-          .filter(line => this._nameAndMessage.indexOf(line) === -1)
-          .filter(line => this.message.indexOf(line) === -1)
-          .filter(line => line.indexOf(this.name) !== 0)
+      : this._rawStackLines.filter(line => this._nameAndMessage.indexOf(line) === -1)
 
     return resultLines.map(line => this._frameRE.test(line)
       ? line.replace(/^\s*/, '')
@@ -141,9 +138,9 @@ export default class SmartError implements IErrorLike {
       ? lastMessageWrap.index
       : -1
 
-    const firstStackWarp = first(this._stackElements)
-    const firstStackLine = isObject(firstStackWarp)
-      ? firstStackWarp.index
+    const firstStackWrap = first(this._stackElements)
+    const firstStackLine = isObject(firstStackWrap)
+      ? firstStackWrap.index
       : -1
 
     const firstLine = first(this._rawStackLines) || ''
