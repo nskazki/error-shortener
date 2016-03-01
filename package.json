@@ -14,7 +14,9 @@
     "tslint": "tslint $(find src test -name '*.ts')",
     "mocha": "mocha"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.5.1"
+  },
   "devDependencies": {
     "espower-typescript": "^5.0.1",
     "mocha": "^2.4.5",
