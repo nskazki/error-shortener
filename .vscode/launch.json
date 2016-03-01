@@ -22,7 +22,7 @@
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": false,
-            "args": [ "build/test" ],
+            "args": [ "build/test/*.test.js" ],
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "runtimeArgs": [],
