@@ -3,22 +3,35 @@
 [![Build Status](https://travis-ci.org/nskazki/error-shortener.svg?branch=master)](https://travis-ci.org/nskazki/error-shortener)
 [![Coverage Status](https://coveralls.io/repos/github/nskazki/error-shortener/badge.svg?branch=master)](https://coveralls.io/github/nskazki/error-shortener)
 
+>This module is written on `typescript`, and contains the `.d.ts` file.
+><br>If you write on `typescript`: just use it in your project and definitions will be automatically uploaded.
+
 ```
 npm i -S error-shortener
 ```
 
->This module is written on `typescript`, and contains the `.d.ts` file.
-><br>If you write on `typescript`: just use it in your project and definitions will be automatically uploaded.
-
-# motivation
+# Motivation
 
 Once I tired of reading the error-stack on several screens.
 So I wrote the module to clean the stack: it removes the elements that are out of your repository (based on `process.cwd()`), and the elements from the `node_modules` folder.
 <br>Note: before cleaning the error will be checked to the expected format. If it is different, the stack cleaning  will not be fulfilled.
 
-## examples
+# API
+```js
+const API = require('error-shortner')
 
-### example: error has an expected format
+// performs reduction of the stack, normalized error-stack indents, replacement message and name to the actual
+// alias to API.fmtShortError
+API.fmtError(arg: API.IErrorLike): string
+// normalized error-stack indents, replacement message and name to the actual
+API.fmtLongErrorf(arg: API.IErrorLike): string
+// compliance argument with the interface
+API.isIErrorLike(arg: any): arg is API.IErrorLike
+```
+
+# Examples
+
+# Example: error has an expected format
 
 when formatting:
  * Replaced the old `SomeError` to the new `NewError` name.
@@ -65,7 +78,7 @@ From previous event:
 */
 ```
 
-### example: unknown error format
+# Example: unknown error format
 
 when formatting:
   * added default `Error` name
