@@ -7,12 +7,17 @@
   "typings": "build/src/smart-error.d.ts",
   "author": "nskazki@gmail.com",
   "scripts": {
+    "prepublish": "npm run test",
+    "preversion": "npm run test",
+    "test": "npm run tslint && npm run cover",
+    "pretest": "npm run build",
+    "build": "rm -rf build/* && npm run tsd && tsc",
     "npmignore": "npm pack . > /dev/null && tar -tvf *.tgz && rm *.tgz",
     "tsd": "tsd install",
-    "build": "rm -rf build/* && tsc",
-    "prepublish": "npm run tsd && npm run test && npm run build",
-    "test": "npm run tslint && npm run mocha",
     "tslint": "tslint $(find src test -name '*.ts')",
+    "cover": "npm run cover:setup && npm run cover:check",
+    "cover:setup": "istanbul cover node_modules/mocha/bin/_mocha -- build/test/*.test.js",
+    "cover:check": "istanbul check-coverage --statements 90",
     "mocha": "mocha"
   },
   "dependencies": {
@@ -20,6 +25,7 @@
   },
   "devDependencies": {
     "espower-typescript": "^5.0.1",
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "power-assert": "^1.2.0",
     "ts-node": "^0.5.5",
