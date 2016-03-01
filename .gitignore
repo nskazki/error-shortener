@@ -1,12 +1,17 @@
 node_modules/
 typings/
 
-*-build/
-build/
+*.build.*
+*-build
+build
 
 *.local.*
 *-local
-local/
+local
+
+*.back.*
+*-back
+back
 
 *.out
 *.log
