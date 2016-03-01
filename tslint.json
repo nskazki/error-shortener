@@ -1,11 +1,6 @@
 {
   "rules": {
-    "align": [
-      true,
-      "parameters",
-      "arguments",
-      "statements"
-    ],
+    "align": [ false ],
     "ban": false,
     "class-name": true,
     "comment-format": [
@@ -13,7 +8,7 @@
       "check-space",
       "check-lowercase"
     ],
-    "curly": true,
+    "curly": false,
     "eofline": true,
     "forin": true,
     "indent": [
@@ -24,10 +19,7 @@
     "jsdoc-format": true,
     "label-position": true,
     "label-undefined": true,
-    "max-line-length": [
-      true,
-      140
-    ],
+    "max-line-length": [ false ],
     "member-access": false,
     "member-ordering": [
       true,
