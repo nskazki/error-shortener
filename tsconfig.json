@@ -12,7 +12,10 @@
   },
   "files": [
     "src/index.ts",
+    "src/smart-error.ts",
     "test/index.test.ts",
-    "typings/main.d.ts"
+    "test/smart-error.test.ts",
+    "typings/tsd.d.ts",
+    "custom-typings/main.d.ts"
   ]
 }

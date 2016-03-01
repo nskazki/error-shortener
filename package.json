@@ -7,9 +7,9 @@
   "author": "nskazki@gmail.com",
   "scripts": {
     "npmignore": "npm pack . > /dev/null && tar -tvf *.tgz && rm *.tgz",
-    "typings": "typings install",
+    "tsd": "tsd install",
     "build": "rm -rf build/* && tsc",
-    "prepublish": "npm run typings && npm run test && npm run build",
+    "prepublish": "npm run tsd && npm run test && npm run build",
     "test": "npm run tslint && npm run mocha",
     "tslint": "tslint $(find src test -name '*.ts')",
     "mocha": "mocha"
@@ -20,9 +20,9 @@
     "mocha": "^2.4.5",
     "power-assert": "^1.2.0",
     "ts-node": "^0.5.5",
+    "tsd": "^0.6.5",
     "tslint": "^3.5.0",
-    "typescript": "^1.8.2",
-    "typings": "^0.6.8"
+    "typescript": "^1.8.2"
   },
   "directories": {
     "test": "test"
