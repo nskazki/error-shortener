@@ -1,6 +1,6 @@
 # error-shortener
 
-[![Build Status](https://travis-ci.org/nskazki/error-shortener.svg?branch=master)](https://travis-ci.org/nskazki/error-shortener)
+[![Build Status](https://travis-ci.org/nskazki/error-shortener.svg)](https://travis-ci.org/nskazki/error-shortener)
 [![Coverage Status](https://coveralls.io/repos/github/nskazki/error-shortener/badge.svg?branch=master)](https://coveralls.io/github/nskazki/error-shortener)
 
 >This module is written on `typescript`, and contains the `.d.ts` file.
