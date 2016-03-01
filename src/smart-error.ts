@@ -44,8 +44,8 @@ export default class SmartError implements IErrorLike {
   name:  string
   stack: string
 
-  private _stackRE: RegExp = /^(\s+at\s)|(From previous event:$)|(-{10,}$)/
-  private _frameRE: RegExp = /^(From previous event:$)|(-{10,}$)/
+  private _stackRE: RegExp = /(^\s+at\s)|(^\s*From previous event:$)|(^\s*-{10,}$)/
+  private _frameRE: RegExp = /(^\s*From previous event:$)|(^\s*-{10,}$)/
   private _errorNameRE: RegExp = /(\w+)(($)|(:.*$))/
 
   constructor(rawError: IErrorLike) {

@@ -178,7 +178,12 @@ other avz = 012
     at error (${cwd}/index.js:12:28)
 From previous event:
     at error (${cwd}/index.js:12:27)
+        From previous event:
     at ${cwd}/index.js:19:15
+        -------------------
+    at ${cwd}/index.js:17:15
+-------------------
+    at ${cwd}/index.js:16:15
     at Timer.listOnTimeout (timers.js:92:15)
     at node.js:933:3`
     }
@@ -191,7 +196,12 @@ other avz = 012
     at error (${cwd}/index.js:12:28)
 From previous event:
     at error (${cwd}/index.js:12:27)
+From previous event:
     at ${cwd}/index.js:19:15
+-------------------
+    at ${cwd}/index.js:17:15
+-------------------
+    at ${cwd}/index.js:16:15
     at Timer.listOnTimeout (timers.js:92:15)
     at node.js:933:3`)
     assert.equal(sErr.toShortString(),
@@ -201,6 +211,11 @@ other avz = 012
     at error (index.js:12:28)
 From previous event:
     at error (index.js:12:27)
-    at index.js:19:15`)
+From previous event:
+    at index.js:19:15
+-------------------
+    at index.js:17:15
+-------------------
+    at index.js:16:15`)
   })
 })
