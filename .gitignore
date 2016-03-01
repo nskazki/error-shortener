@@ -2,6 +2,8 @@ node_modules/
 typings/
 coverage/
 
+.coveralls.yml
+
 *.build.*
 *-build
 build

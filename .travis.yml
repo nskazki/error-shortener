@@ -1,6 +1,15 @@
 language: node_js
 node_js:
   - 'stable'
+  - 'iojs'
   - '5'
   - '4'
   - '0.12'
+  - '0.10'
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+script: npm run test-travis
