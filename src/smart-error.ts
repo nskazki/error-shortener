@@ -25,6 +25,20 @@ export function isErrorLike(arg: any): arg is IErrorLike {
     && (isUndefined(arg.name) || isString(arg.name))
 }
 
+export function fmtError(rawError: any): string {
+  return fmtShortError(rawError)
+}
+
+export function fmtShortError(rawError: any): string {
+  const sErr = new SmartError(rawError)
+  return sErr.toShortString()
+}
+
+export function fmtLongError(rawError: any): string {
+  const sErr = new SmartError(rawError)
+  return sErr.toLongString()
+}
+
 export default class SmartError implements IErrorLike {
   message: string
   name:  string
