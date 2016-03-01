@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "build/src/smart-error.js",
+  "typings": "build/src/smart-error.d.ts",
   "author": "nskazki@gmail.com",
   "scripts": {
     "npmignore": "npm pack . > /dev/null && tar -tvf *.tgz && rm *.tgz",
