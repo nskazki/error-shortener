@@ -111,3 +111,7 @@ Stack:
     file:///home/nskazki/node.js/work-projects/dmca-ip-search-service/phantom-farm/worker/node_modules/node-phantom-simple/bridge.js:121:61`
 */
 ```
+
+# Related
+
+ * [pretty-error](https://github.com/AriaMinaei/pretty-error)
