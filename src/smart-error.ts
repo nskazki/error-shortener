@@ -17,7 +17,7 @@ interface IElement {
   index: number
 }
 
-export function isErrorLike(arg: any): arg is IErrorLike {
+export function isIErrorLike(arg: any): arg is IErrorLike {
   return true
     && isObject(arg)
     && isString(arg.message)
@@ -49,7 +49,7 @@ export default class SmartError implements IErrorLike {
   private _errorNameRE: RegExp = /(\w+)(($)|(:.*$))/
 
   constructor(rawError: IErrorLike) {
-    if (!isErrorLike(rawError))
+    if (!isIErrorLike(rawError))
       throw new Error(`SmartError#new: first arg must be a IErrorLike!\
         \n\t arg type: ${typeof rawError}\
         \n\t arg data: ${inspect(rawError)}`)
