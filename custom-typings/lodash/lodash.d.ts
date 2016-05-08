@@ -7,4 +7,10 @@ declare module _ {
     interface LoDashExplicitWrapper<T> {
         get(selector?: string): LoDashExplicitWrapper<any>;
     }
+    interface LoDashExplicitObjectWrapper<T> {
+        mapValues<TResult, TValues>(
+          iteratee: ObjectIterator<TValues, TResult>,
+          thisArg?: any
+        ): LoDashImplicitObjectWrapper<Dictionary<TResult>>;
+    }
 }

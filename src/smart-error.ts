@@ -2,9 +2,10 @@
 
 import {
   isString, isObject, isUndefined,
-  pick, merge, first, last, chain } from 'lodash'
+  merge, first, last, chain, trimEnd } from 'lodash'
 import { inspect } from 'util'
 import { sep } from 'path'
+import stringRender from 'string-render'
 
 export interface IErrorLike {
   message: string,
@@ -54,7 +55,16 @@ export default class SmartError implements IErrorLike {
         \n\t arg type: ${typeof rawError}\
         \n\t arg data: ${inspect(rawError)}`)
 
-    merge(this, { stack: '' }, pick(rawError, 'stack', 'message', 'name'))
+    const readyToMergeError = <IErrorLike> chain(rawError)
+      .pick('stack', 'message', 'name')
+      .mapValues(stringRender)
+      .mapValues((value: string) => value
+        .split('\n').map(line => trimEnd(line))
+        .join('\n'))
+      .defaults({ stack: '' })
+      .value()
+
+    merge(this, readyToMergeError)
 
     if (isUndefined(this.name) && this._isClassicError)
       this.name = first(this._messageElements).line.match(this._errorNameRE)[1]

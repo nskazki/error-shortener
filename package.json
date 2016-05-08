@@ -23,7 +23,8 @@
     "mocha": "mocha"
   },
   "dependencies": {
-    "lodash": "^4.5.1"
+    "lodash": "^4.5.1",
+    "string-render": "^1.0.5"
   },
   "devDependencies": {
     "coveralls": "^2.11.8",
