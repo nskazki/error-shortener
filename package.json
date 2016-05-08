@@ -38,5 +38,24 @@
   },
   "directories": {
     "test": "test"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nskazki/error-shortener.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nskazki/error-shortener/issues"
+  },
+  "homepage": "https://github.com/nskazki/error-shortener#readme",
+  "keywords": [
+    "format",
+    "fmt",
+    "pretty",
+    "error",
+    "err",
+    "shortener",
+    "shortner",
+    "stack",
+    "message"
+  ]
 }
