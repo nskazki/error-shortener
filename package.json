@@ -1,7 +1,7 @@
 {
   "name": "error-shortener",
   "description": "generates a string containing a message and trimmed stack from error",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "build/src/smart-error.js",
   "typings": "build/src/smart-error.d.ts",
